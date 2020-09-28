@@ -2,10 +2,12 @@
 
 namespace App\DataFixtures;
 
+use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
-use App\Entity\Articles;
+use App\Entity\Image;
+use App\Entity\news;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+
 
 class AppFixtures extends Fixture
 {
@@ -13,24 +15,32 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('FR-fr');
 
-        //Manager Articles 
+        //Manager news
 
         for( $i = 1; $i <= 30; $i++){
         
-        $article = new Articles();
+        $article = new news();
 
         $title           = $faker->sentence();
-        $introduction    = $faker->paragraph(2);
-        $filename        = $faker->imageUrl(1000,350);
+        $introduction    = $faker->paragraph(2);        
         $content         = '<p>' .join('</p><p>', $faker->paragraphs(5)) .'</P>';
         
        
 
         $article->setTitle($title) 
            ->setIntroduction($introduction)
-           ->setContent($content)
-           ->setFilename($filename);
-           
+           ->setContent($content);           
+
+           for($j = 1; $j <= mt_rand(2 , 5); $j++){
+            $image = new Image();
+
+            $image->setUrl($faker->imageUrl()) 
+                  ->setCaption($faker->sentence());
+            $article->addImage($image);
+                  
+
+        $manager->persist($image);
+       }          
 
 
         $manager->persist($article);

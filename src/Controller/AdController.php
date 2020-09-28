@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CaseStudyController extends AbstractController
+class AdController extends AbstractController
 {
     /**
-     * @Route("/case_study", name="case_study")
+     * @Route("/ads", name="ads_index")
      */
     public function index()
     {
-        return $this->render('case_study/case.html.twig', [
-            'controller_name' => 'CaseStudyController',
+        return $this->render('ad/ads.html.twig', [
+            'controller_name' => 'AdController',
         ]);
     }
 }

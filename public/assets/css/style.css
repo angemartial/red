@@ -1553,7 +1553,7 @@ Page Title CSS
 */
 .page-title {
 	text-align: center;
-	background-image: url(../../assets/img/page-title-bg.jpg);
+	background-image: url("../../assets/img/page_title.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;

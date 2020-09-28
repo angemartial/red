@@ -2,27 +2,22 @@
 
 namespace App\Entity;
 
-use DateTime;
+
 use App\Entity\User;
-use DateTimeInterface;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\ArticlesRepository;
+use App\Repository\NewsRepository;
 use Doctrine\Common\Collections\Collection;
-use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity(repositoryClass=ArticlesRepository::class)
- * @UniqueEntity("title")
- * @Vich\Uploadable
+ * @ORM\Entity(repositoryClass=NewsRepository::class)
+ * @UniqueEntity("title") *
  *  @ORM\HasLifecycleCallbacks
  */
-class Articles
+class news
 {
     /**
      * @ORM\Id()
@@ -30,27 +25,9 @@ class Articles
      * @ORM\Column(type="integer")
      */
     private $id;
-
+    
     /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     * 
-     * @Vich\UploadableField(mapping="articles_image", fileNameProperty="filename")
-     * 
-     * @var File|null
-     */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="string")
-     *
-     * @var string|null
-     */
-    private $filename;
-
-
-    /**
-     * @ORM\Column(type="datetime")
-     * 
+     * @ORM\Column(type="datetime")     *
      * @var \DateTimeInterface|null
      */
     private $updatedAt;
@@ -86,7 +63,28 @@ class Articles
     /**
      * @ORM\Column(type="datetime")
      */
-    private $created_at; 
+    private $created_at;
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Image::class, inversedBy="news", cascade={"persist"})
+     */
+    private $images; 
 
 
     
@@ -96,6 +94,7 @@ class Articles
         $this->images = new ArrayCollection();
         $this->state = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     
@@ -209,40 +208,33 @@ class Articles
         $this->created_at = $created_at;
 
         return $this;
-    }   
+    }
 
-
-    public function setImageFile(?File $imageFile = null): void
+    /**
+     * @return Collection|Image[]
+     */
+    public function getImages(): Collection
     {
-        $this->imageFile = $imageFile;
+        return $this->images;
+    }
 
-        // Only change the updated af if the file is really uploaded to avoid database updates.
-        // This is needed when the file should be set when loading the entity.
-        if ($this->imageFile instanceof UploadedFile) {
-            $this->updatedAt = new \DateTime('now');
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
         }
+
+        return $this;
     }
 
-    public function getImageFile(): ?File
+    public function removeImage(Image $image): self
     {
-        return $this->imageFile;
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
+        }
+
+        return $this;
     }
 
-    public function setFilename(?string $filename): void
-    {
-        $this->filename = $filename;
-    }
-
-    public function getFilename(): ?string
-    {
-        return $this->filename;
-    }
-    
-    
-
-
-
-    
-
-    
+   
 }

@@ -8,27 +8,27 @@
         <meta name="keywords" content="advisor, attorney, business, chartered, court, judge, lawyer, legal, advocate, barrister, company law, consultant, corporate, finance, law, law firm, legal adviser, solicitor">
         <meta name="description" content="Abhy is a Creative and Responsive Professional HTML template for Lawyers, Attorneys, Corporate sites etc.">
         <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="/assets/css/animate.css">
         <!-- Font Awesome Min CSS -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
         <!-- Magnific Popup Min CSS -->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
         <!-- IcoFont Min CSS -->
-        <link rel="stylesheet" href="assets/css/icofont.css">
+        <link rel="stylesheet" href="/assets/css/icofont.css">
         <!-- Owl Carousel Min CSS -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
         <!-- Classy Nav Min CSS-->
-        <link rel="stylesheet" href="assets/css/classy-nav.min.css">
+        <link rel="stylesheet" href="/assets/css/classy-nav.min.css">
         <!-- Style CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
         <!-- Responsive Min CSS -->
-        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="/assets/css/responsive.css">
         <!-- Color Default CSS -->	
-		<link rel="stylesheet" href="assets/css/color/color-default.css">
+		<link rel="stylesheet" href="/assets/css/color/color-default.css">
 
-        <title>{% block title %} Abhy - A Template for Lawyers and Law Firms {% endblock %}
+        <title>{% block title %} RED {% endblock %}
         </title>
     </head>
     
@@ -43,34 +43,8 @@
         <!-- End Preloader Area -->
        
         <!-- Start Top Header Area -->
-        <header class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <p><a href="#"><i class="fa fa-envelope"></i> info@lawyercourt.com</a></p>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <p><a href="#"><i class="fa fa-phone"></i> +001 321 254-5874</a></p>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <ul>
-                            <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="contact-style-one.html" class="btn btn-primary">Free Consultation</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        {% include '/partials/header.html.twig' %}
         <!-- End Top Header Area -->
-       
         <!-- Start Main Menu Area -->
         <div class="main-header-area header-sticky">
             <div class="container">
@@ -79,7 +53,7 @@
 					<nav class="classy-navbar justify-content-between" id="eduNav">
 
 						<!-- Logo -->
-						<a class="nav-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+						<a class="nav-brand" href="{{ path ('home_RED') }}"><img src="/assets/img/logo_red.png" alt="logo"></a>
 
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">
@@ -97,132 +71,58 @@
 							<!-- Nav Start -->
 							<div class="classynav">
 								<ul>
-									<li><a href="#" class="active">Home</a>
-										<ul class="dropdown">
-											<li class="active"><a href="index.html">Home Demo One</a></li>
-											<li><a href="index-two.html">Home Demo Two</a></li>
-											<li><a href="index-three.html">Home Demo Three</a></li>
-										</ul>
+									<li><a href="{{ path ('home_RED') }}" class="active">Accueil</a>
 									</li>
-									<li><a href="#">About Us</a>
-										<ul class="dropdown">
-											<li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="our-mission.html">Our Mission</a></li>
-                                            <li><a href="appointment.html">Appointment</a></li>
-                                            <li><a href="attorneys-style-one.html">Attorneys</a></li>
-                                            <li><a href="attorneys-details.html">Attorneys Details</a></li>
-                                            <li><a href="gallery-style-one.html">Gallery</a></li>
-										</ul>
+									<li><a href="#">L'Association</a>
+                                        <ul class="dropdown">
+                                            <li><a href="">Réseau RED</a></li>
+                                            <li><a href="">Membres du RED</a></li>
+                                            <li><a href="services-style-two.html">Nous contacter</a></li>
+                                        </ul>
 									</li>
-									<li><a href="#">Practice Area</a>
-										<ul class="dropdown">
-											<li><a href="practice-style-one.html">Practice Area One</a></li>
-                                            <li><a href="practice-style-two.html">Practice Area Two</a></li>
-                                            <li><a href="practice-style-three.html">Practice Area Three</a></li>
-                                            <li><a href="practice-style-four.html">Practice Area Four</a></li>
-                                            <li><a href="practice-details.html">Practice Area Details</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Services</a>
-										<ul class="dropdown">
-											<li><a href="services-style-one.html">Services Style One</a></li>
-                                            <li><a href="services-style-two.html">Services Style Two</a></li>
-                                            <li><a href="services-style-three.html">Services Style Three</a></li>
-                                            <li><a href="services-style-four.html">Services Style Four</a></li>
-                                            <li><a href="services-details.html">Services Details</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Pages</a>
-										<ul class="dropdown">
-											<li><a href="about-us.html">About Us</a></li>
-											<li><a href="#">Practice Area</a>
-												<ul class="dropdown">
-													<li><a href="practice-style-one.html">Practice Area One</a></li>
-                                                    <li><a href="practice-style-two.html">Practice Area Two</a></li>
-                                                    <li><a href="practice-style-three.html">Practice Area Three</a></li>
-                                                    <li><a href="practice-style-four.html">Practice Area Four</a></li>
-                                                    <li><a href="practice-details.html">Practice Area Details</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Case Result</a>
-												<ul class="dropdown">
-													<li><a href="caseresult-style-one.html">Case Result Style One</a></li>
-                                                    <li><a href="caseresult-style-two.html">Case Result Style Two</a></li>
-                                                    <li><a href="caseresult-style-three.html">Case Result Style Three</a></li>
-                                                    <li><a href="caseresult-details.html">Case Result Details</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Attorneys</a>
-												<ul class="dropdown">
-													<li><a href="attorneys-style-one.html">Attorneys Style One</a></li>
-                                                    <li><a href="attorneys-style-two.html">Attorneys Style Two</a></li>
-                                                    <li><a href="attorneys-style-three.html">Attorneys Style Three</a></li>
-                                                    <li><a href="attorneys-details.html">Attorneys Details</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Services</a>
-												<ul class="dropdown">
-													<li><a href="services-style-one.html">Services Style One</a></li>
-                                                    <li><a href="services-style-two.html">Services Style Two</a></li>
-                                                    <li><a href="services-style-three.html">Services Style Three</a></li>
-                                                    <li><a href="services-style-four.html">Services Style Four</a></li>
-                                                    <li><a href="services-details.html">Services Details</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Blog</a>
-												<ul class="dropdown">
-													<li><a href="blog-style-one.html">Blog Style One</a></li>
-                                                    <li><a href="blog-style-two.html">Blog Style Two</a></li>
-                                                    <li><a href="blog-style-three.html">Blog Style Three</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Shop</a>
-												<ul class="dropdown">
-													<li><a href="shop-style-one.html">Shop Style One</a></li>
-                                                    <li><a href="shop-style-two.html">Shop Style Two</a></li>
-                                                    <li><a href="shop-style-three.html">Shop Style Three</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-												</ul>
-											</li>
-                                            <li><a href="#">Gallery</a>
+                                    <li><a href="#">Articles</a>
+                                        <ul class="dropdown">
+                                            <li><a href="">Droit</a></li>
+                                            <li><a href="">Economie</a></li>
+                                        </ul>
+                                    <li><a href="{{ path ('news_index') }}">Actualités</a></li>
+                                    <li><a href="#">Base de données</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Droit</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="gallery-style-one.html">Gallery style one</a></li>
-                                                    <li><a href="gallery-style-two.html">Gallery style two</a></li>
+                                                    <li><a href="practice-style-one.html">Codes</a></li>
+                                                    <li><a href="practice-style-two.html">Jurisprudence</a></li>
                                                 </ul>
                                             </li>
-											<li><a href="appointment.html">Appointment</a></li>
-											<li><a href="error-page.html">404 Error</a></li>
-											<li><a href="faq.html">FAQ</a></li>
-											<li><a href="login.html">Login</a></li>
-											<li><a href="register.html">Register</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Blog</a>
-										<ul class="dropdown">
-											<li><a href="blog-style-one.html">Blog Style One</a></li>
-                                            <li><a href="blog-style-two.html">Blog Style Two</a></li>
-                                            <li><a href="blog-style-three.html">Blog Style Three</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Shop</a>
-										<ul class="dropdown">
-											<li><a href="shop-style-one.html">Shop Style One</a></li>
-                                            <li><a href="shop-style-two.html">Shop Style Two</a></li>
-                                            <li><a href="shop-style-three.html">Shop Style Three</a></li>
-                                            <li><a href="shop-details.html">Shop Details</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Contact</a>
-										<ul class="dropdown">
-											<li><a href="contact-style-one.html">Contact style one</a></li>
-                                            <li><a href="contact-style-two.html">Contact style two</a></li>
-										</ul>
+                                            <li><a href="#">Economie</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="caseresult-style-one.html">Open Data</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Répères Méthologiques</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Droit</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="practice-style-one.html">Commentaires d'arrêt</a></li>
+                                                    <li><a href="practice-style-two.html">Cas pratique</a></li>
+                                                    <li><a href="practice-style-two.html">Dissertation</a></li>
+                                                    <li><a href="practice-style-two.html">Note de synthèse</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Economie</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="caseresult-style-one.html">Economie théorique</a></li>
+                                                    <li><a href="caseresult-style-one.html">Statistique et économétrie</a></li>
+                                                    <li><a href="caseresult-style-one.html">Economie expérimentale</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+									<li><a href="#">Nous contacter</a>
 									</li>
                                     <li><a href="#search" class="search-btn"><i class="fa fa-search"></i></a></li>
 								</ul>
@@ -234,13 +134,13 @@
 			</div>
         </div>
         <!-- End Main Menu Area -->
-        
+
         <!-- Start Search Popup Area -->
         <div id="search">
             <button type="button" class="close">×</button>
             <form>
                 <input type="search" value="" placeholder="SEARCH KEYWORD(s)" />
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Rechercher</button>
             </form>
         </div>
         <!-- End Search Popup Area -->
@@ -248,113 +148,34 @@
 
         {% endblock %}
         <!-- Start Footer Area -->
-        <footer class="footer-area ptb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="widgets">
-                            <div class="footer-logo">
-                                <a href="index.html"> <img src="assets/img/footer-logo.png" alt="logo"></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed eiusmod tempor incididunt ut labore et dolor emagna eliqua.</p>
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="widgets">
-                            <h3>Usefull Links</h3>
-                            <ul class="usefull-links">
-                                <li><a href="index.html"><i class="fa fa-angle-double-right"></i> Home</a></li>
-                                <li><a href="about-us.html"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                <li><a href="services-style-one.html"><i class="fa fa-angle-double-right"></i> Services</a></li>
-                                <li><a href="gallery-style-one.html"><i class="fa fa-angle-double-right"></i> Gallery</a></li>
-                                <li><a href="blog-style-one.html"><i class="fa fa-angle-double-right"></i> Blog</a></li>
-                                <li><a href="faq.html"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="widgets">
-                            <h3>Latest Tweets</h3>
-                            <div class="latest-tweets-post">
-                                <div class="icon">
-                                    <i class="fa fa-twitter"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis massa, <a href="#">@Morbi turpis massa</a></p>
-                                    <span>About an hour ago</span>
-                                </div>
-                            </div>
-                            
-                            <div class="latest-tweets-post mb-0">
-                                <div class="icon">
-                                    <i class="fa fa-twitter"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi turpis massa, <a href="#">@Morbi turpis massa</a></p>
-                                    <span>About an hour ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="widgets">
-                            <h3>Contact Us</h3>
-                            <ul class="contact-us">
-                                <li><i class="fa fa-map-marker"></i> 6000 Universal Blvd, Orlando, FL 32819, USA</li>
-                                <li><i class="fa fa-phone"></i> <a href="#"> +001 321 254-5874</a></li>
-                                <li><i class="fa fa-envelope"></i> <a href="#">  info@lawyercourt.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <p><i class="fa fa-copyright"></i> 2019 <a href="http://envytheme.com/" target="_blank">EnvyTheme.</a> All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include 'partials/footer.html.twig' %}
         <!-- End Footer Area -->
         <div class="go-top"><i class="fa fa-angle-up"></i></div>
         <!-- jQuery Min JS -->
-        <script src="assets/js/jquery-min.js"></script>
+        <script src="/assets/js/jquery-min.js"></script>
         <!-- Prpper JS -->
-        <script src="assets/js/popper.min.js"></script>
+        <script src="/assets/js/popper.min.js"></script>
         <!-- Bootstrap Min JS -->
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
         <!-- Jquery Magnific Popup Min Js -->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/js/jquery.magnific-popup.min.js"></script>
         <!-- Jquery Mixitup Min Js -->
-        <script src="assets/js/jquery.mixitup.min.js"></script>
+        <script src="/assets/js/jquery.mixitup.min.js"></script>
         <!-- Owl Carousel Min Js -->
-        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="/assets/js/owl.carousel.min.js"></script>
         <!-- Jquery CounterUp Min JS -->
-        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="/assets/js/jquery.counterup.min.js"></script>
         <!-- Waypoints Min Js -->
-        <script src="assets/js/waypoints.min.js"></script>
+        <script src="/assets/js/waypoints.min.js"></script>
         <!-- Wow Min JS -->
-        <script src="assets/js/wow.min.js"></script>
+        <script src="/assets/js/wow.min.js"></script>
         <!-- Classy Nav Min JS -->
-        <script src="assets/js/classy-nav.min.js"></script>
+        <script src="/assets/js/classy-nav.min.js"></script>
         <!-- Form Validator Min JS -->
-        <script src="assets/js/form-validator.min.js"></script>
+        <script src="/assets/js/form-validator.min.js"></script>
         <!-- Contact Form Min JS -->
-        <script src="assets/js/contact-form-script.js"></script>
+        <script src="/assets/js/contact-form-script.js"></script>
         <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
+        <script src="/assets/js/main.js"></script>
     </body>
 </html>
