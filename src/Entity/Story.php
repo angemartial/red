@@ -6,18 +6,18 @@ namespace App\Entity;
 use App\Entity\User;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\NewsRepository;
+use App\Repository\StoryRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity(repositoryClass=NewsRepository::class)
+ * @ORM\Entity(repositoryClass=StoryRepository::class)
  * @UniqueEntity("title") *
  *  @ORM\HasLifecycleCallbacks
  */
-class news
+class Story
 {
     /**
      * @ORM\Id()
@@ -66,6 +66,11 @@ class news
     private $created_at;
 
     /**
+     * @ORM\ManyToMany(targetEntity=Image::class, inversedBy="stories")
+     */
+    private $coverImage;
+
+    /**
      * @return \DateTimeInterface|null
      */
     public function getUpdatedAt()
@@ -81,12 +86,6 @@ class news
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Image::class, inversedBy="news", cascade={"persist"})
-     */
-    private $images; 
-
-
     
   
     public function __construct()
@@ -95,6 +94,7 @@ class news
         $this->state = new ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->coverImage = new ArrayCollection();
     }
 
     
@@ -213,24 +213,24 @@ class news
     /**
      * @return Collection|Image[]
      */
-    public function getImages(): Collection
+    public function getCoverImage(): Collection
     {
-        return $this->images;
+        return $this->coverImage;
     }
 
-    public function addImage(Image $image): self
+    public function addCoverImage(Image $coverImage): self
     {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
+        if (!$this->coverImage->contains($coverImage)) {
+            $this->coverImage[] = $coverImage;
         }
 
         return $this;
     }
 
-    public function removeImage(Image $image): self
+    public function removeCoverImage(Image $coverImage): self
     {
-        if ($this->images->contains($image)) {
-            $this->images->removeElement($image);
+        if ($this->coverImage->contains($coverImage)) {
+            $this->coverImage->removeElement($coverImage);
         }
 
         return $this;

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ news.title }}{% endblock %}
+{% block title %}{{ stories.title }}{% endblock %}
 
 {% block content %}
 
@@ -32,7 +32,9 @@
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div class="blog-details">
                         <div class="img">
-                            <img src="/assets/img/detail-img.jpg" alt="services-details">
+                            {% if stories.coverImage is not empty %}
+                            <img src="{{ stories.coverImage[0].url }}" alt="services-details">
+                            {% endif %}
                             <div class="date">
                                 <span>15 Jan <br> 2018</span>
                             </div>
@@ -45,12 +47,12 @@
                                 <li><a href="#"><i class="fa fa-comments-o"></i> 31</a></li>
                                 <li><a href="#"><i class="fa fa-tag"></i> Divorce Case</a></li>
                             </ul>
-                            <h3>{{ news.title }}</h3>
-                            <p><b><i>{{ news.introduction }}</i></b></p>
+                            <h3>{{ stories.title }}</h3>
+                            <p><b><i>{{ stories.introduction }}</i></b></p>
 
                             <div class="text">
 
-                                <p>{{ news.content|raw }}</p>
+                                <p>{{ stories.content|raw }}</p>
 
                             </div>
 

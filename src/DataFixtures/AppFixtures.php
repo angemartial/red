@@ -2,10 +2,10 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Story;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use App\Entity\Image;
-use App\Entity\news;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
 
@@ -15,11 +15,11 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('FR-fr');
 
-        //Manager news
+        //Manager stories
 
         for( $i = 1; $i <= 30; $i++){
         
-        $article = new news();
+        $stories = new Story();
 
         $title           = $faker->sentence();
         $introduction    = $faker->paragraph(2);        
@@ -27,7 +27,7 @@ class AppFixtures extends Fixture
         
        
 
-        $article->setTitle($title) 
+        $stories->setTitle($title)
            ->setIntroduction($introduction)
            ->setContent($content);           
 
@@ -36,14 +36,14 @@ class AppFixtures extends Fixture
 
             $image->setUrl($faker->imageUrl()) 
                   ->setCaption($faker->sentence());
-            $article->addImage($image);
+            $stories->addCoverImage($image);
                   
 
         $manager->persist($image);
        }          
 
 
-        $manager->persist($article);
+        $manager->persist($stories);
     }
 
       $manager->flush();

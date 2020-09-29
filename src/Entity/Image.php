@@ -13,8 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Image
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\Id
+     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -30,13 +30,13 @@ class Image
     private $caption;
 
     /**
-     * @ORM\ManyToMany(targetEntity=news::class, mappedBy="images", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity=Story::class, mappedBy="coverImage")
      */
-    private $news;
+    private $stories;
 
     public function __construct()
     {
-        $this->news = new ArrayCollection();
+        $this->stories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -69,28 +69,28 @@ class Image
     }
 
     /**
-     * @return Collection|news[]
+     * @return Collection|Story[]
      */
-    public function getNews(): Collection
+    public function getStories(): Collection
     {
-        return $this->news;
+        return $this->stories;
     }
 
-    public function addNews(news $news): self
+    public function addStories(Story $stories): self
     {
-        if (!$this->news->contains($news)) {
-            $this->news[] = $news;
-            $news->addImage($this);
+        if (!$this->stories->contains($stories)) {
+            $this->stories[] = $stories;
+            $stories->addCoverImage($this);
         }
 
         return $this;
     }
 
-    public function removeNews(news $news): self
+    public function removeStories(Story $stories): self
     {
-        if ($this->news->contains($news)) {
-            $this->news->removeElement($news);
-            $news->removeImage($this);
+        if ($this->stories->contains($stories)) {
+            $this->stories->removeElement($stories);
+            $stories->removeCoverImage($this);
         }
 
         return $this;

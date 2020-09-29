@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\news;
+use App\Entity\Story;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method news|null find($id, $lockMode = null, $lockVersion = null)
- * @method news|null findOneBy(array $criteria, array $orderBy = null)
- * @method news[]    findAll()
- * @method news[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Story|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Story|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Story[]    findAll()
+ * @method Story[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class NewsRepository extends ServiceEntityRepository
+class StoryRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, news::class);
+        parent::__construct($registry, Story::class);
     }
 
     // /**
-    //  * @return news[] Returns an array of news objects
+    //  * @return stories[] Returns an array of stories objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class NewsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?news
+    public function findOneBySomeField($value): ?stories
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')
