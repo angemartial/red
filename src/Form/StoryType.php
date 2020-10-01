@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Story;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -40,6 +41,7 @@ class StoryType extends AbstractType
             ->add('slug',  UrlType::class,$this->getConfiguration('adresse web', 'Entrez votre adresse'))
             ->add('introduction',  TextType::class,$this->getConfiguration('Introduction', 'Donnez une description globale'))
             ->add('content',  TextareaType::class,$this->getConfiguration('Descrition', 'Zone de texte'))
+
 //            ->add('coverImage', UrlType::class, $this->getConfiguration('Url','Donner l\'adresse d\'une image'))
         ;
     }
