@@ -1,0 +1,134 @@
+<!-- Start Top Header Area -->
+ <header class="top-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <p><a href="#"><i class="fa fa-envelope"></i> info@red.com</a></p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <ul>
+                    <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="contact-style-one.html" class="btn btn-primary">Se connecter</a>
+            </div>
+        </div>
+    </div>
+ </header>
+{% for label, messages in app.flashes %}
+    <div class="container">
+        <div class="alert alert-{{ label }}">
+            <button type="button" class="close">×</button>
+            {% for message in messages %}
+                <p>{{ message | raw }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
+<!-- Start Main Menu Area -->
+ <div class="main-header-area header-sticky">
+    <div class="container">
+        <div class="classy-nav-container breakpoint-off">
+            <!-- Classy Menu -->
+            <nav class="classy-navbar justify-content-between" id="eduNav">
+
+                <!-- Logo -->
+                <a class="nav-brand" href="{{ path ('home_RED') }}"><img src="/assets/img/logo_red.png" alt="logo"></a>
+
+                <!-- Navbar Toggler -->
+                <div class="classy-navbar-toggler">
+                    <span class="navbarToggler"><span></span><span></span><span></span></span>
+                </div>
+
+                <!-- Menu -->
+                <div class="classy-menu">
+
+                    <!-- close btn -->
+                    <div class="classycloseIcon">
+                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    </div>
+
+                    <!-- Nav Start -->
+                    <div class="classynav">
+                        <ul>
+                            <li><a href="{{ path ('home_RED') }}" class="active">Accueil</a>
+                            </li>
+                            <li><a href="#">L'Association</a>
+                                <ul class="dropdown">
+                                    <li><a href="">Réseau RED</a></li>
+                                    <li><a href="">Membres du RED</a></li>
+                                    <li><a href="services-style-two.html">Nous contacter</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Articles</a>
+                                <ul class="dropdown">
+                                    <li><a href="">Droit</a></li>
+                                    <li><a href="">Economie</a></li>
+                                </ul>
+                            <li><a href="{{ path ('stories_index') }}">Actualités</a></li>
+                            <li><a href="#">Base de données</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Droit</a>
+                                        <ul class="dropdown">
+                                            <li><a href="practice-style-one.html">Codes</a></li>
+                                            <li><a href="practice-style-two.html">Jurisprudence</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Economie</a>
+                                        <ul class="dropdown">
+                                            <li><a href="caseresult-style-one.html">Open Data</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Répères Méthologiques</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Droit</a>
+                                        <ul class="dropdown">
+                                            <li><a href="practice-style-one.html">Commentaires d'arrêt</a></li>
+                                            <li><a href="practice-style-two.html">Cas pratique</a></li>
+                                            <li><a href="practice-style-two.html">Dissertation</a></li>
+                                            <li><a href="practice-style-two.html">Note de synthèse</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Economie</a>
+                                        <ul class="dropdown">
+                                            <li><a href="caseresult-style-one.html">Economie théorique</a></li>
+                                            <li><a href="caseresult-style-one.html">Statistique et économétrie</a></li>
+                                            <li><a href="caseresult-style-one.html">Economie expérimentale</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Nous contacter</a>
+                            </li>
+                            <li><a href="#search" class="search-btn"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Nav End -->
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- End Main Menu Area -->
+
+<!-- Start Search Popup Area -->
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="SEARCH KEYWORD(s)" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>

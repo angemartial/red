@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 
+use App\Form\StoryType;
 use App\Repository\StoryRepository;
 use App\Entity\Story;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,9 +32,28 @@ class StoryController extends AbstractController
      * @Route("/stories/create", name ="stories_create")
      * @return Response
      */
-    public function create()
+    public function create(Request $request, EntityManagerInterface $entityManager)
     {
-        return $this->render('stories/create.html.twig');
+        $story = new Story();
+        $form = $this->createForm(StoryType::class, $story);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $entityManager->persist($story);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('story_show', [
+                'slug' => $story->getSlug()
+            ]);
+
+            $this->addFlash(
+                'success',
+                'Votre annonce' .$story->getTitle(). 'a bien été envoyé'
+            );
+        }
+        return $this->render('stories/create.html.twig', [
+            'form' => $form->createView()
+        ]);
 
     }
 
