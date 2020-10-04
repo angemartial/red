@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Story;
 
+use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -39,8 +40,9 @@ class StoryType extends AbstractType
 
             ->add('title', TextType::class, $this->getConfiguration('Titre', 'Entrez le titre'))
             ->add('slug',  UrlType::class,$this->getConfiguration('adresse web', 'Entrez votre adresse'))
-            ->add('introduction',  TextType::class,$this->getConfiguration('Introduction', 'Donnez une description globale'))
-            ->add('content',  TextareaType::class,$this->getConfiguration('Descrition', 'Zone de texte'))
+            ->add('introduction',  TextType::class, $this->getConfiguration('Introduction', 'Donnez une description globale'))
+           ->add('submit', SubmitType::class, $this->getConfiguration('Enregister', '', ['attr' => ['class' => 'btn btn-primary']]))
+            // ->add('content',  FroalaEditorType::class,$this->getConfiguration('Descrition', 'Zone de texte'))
 
 //            ->add('coverImage', UrlType::class, $this->getConfiguration('Url','Donner l\'adresse d\'une image'))
         ;

@@ -3818,3 +3818,8 @@ Go Top CSS
 	color: #fff;
 	filter: alpha(opacity=9000);
 }
+
+a[href="https://www.froala.com/wysiwyg-editor?k=u"]{
+	height: 1px !important;
+	padding: 0 !important;
+}
