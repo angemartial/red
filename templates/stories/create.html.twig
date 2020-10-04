@@ -34,17 +34,15 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <h3 class="title">Details</h3>
                     <div class="check-out-box">
-                            <div class="row">
-                                {{ form_start(form) }}
-
-                            </div>
+                        <div class="row">{{ form_row(form.title) }}</div>
+                        <div class="row">{{ form_row(form.slug) }}</div>
+                        <div class="row">{{ form_row(form.introduction) }}</div>
                     </div>
                 </div>
-                <div class="place-order">
-                    {{ form_widget(form) }}
-                    <button type="submit" class="btn btn-primary">Place Order</button>
+                <div class="place-order col-lg-12 col-md-12 col-sm-12">
+                    {{ form_widget(form.submit) }}
+{#                    <button type="submit" class="btn btn-primary">Sauvegarder</button>#}
                 </div>
-                {{ form_end(form) }}
             </div>
             {{ form_end(form) }}
         </div>

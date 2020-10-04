@@ -42,14 +42,16 @@ class StoryController extends AbstractController
             $entityManager->persist($story);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre article' .$story->getTitle(). 'a bien été envoyé'
+            );
+
             return $this->redirectToRoute('story_show', [
                 'slug' => $story->getSlug()
             ]);
 
-            $this->addFlash(
-                'success',
-                'Votre annonce' .$story->getTitle(). 'a bien été envoyé'
-            );
+
         }
         return $this->render('stories/create.html.twig', [
             'form' => $form->createView()
