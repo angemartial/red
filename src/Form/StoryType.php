@@ -29,7 +29,7 @@ class StoryType extends AbstractType
 
             'label' => $label,
             'attr' => [
-                'placeholder' => $placeholder
+                'placeholder' => $placeholder,
             ]
         ], $options);
 
@@ -42,7 +42,7 @@ class StoryType extends AbstractType
             ->add('slug',  UrlType::class,$this->getConfiguration('adresse web', 'Entrez votre adresse'))
             ->add('introduction',  TextType::class, $this->getConfiguration('Introduction', 'Donnez une description globale'))
            ->add('submit', SubmitType::class, $this->getConfiguration('Enregister', '', ['attr' => ['class' => 'btn btn-primary']]))
-            // ->add('content',  FroalaEditorType::class,$this->getConfiguration('Descrition', 'Zone de texte'))
+            ->add('content',  FroalaEditorType::class, $this->getConfiguration('Contenu', 'Zone de texte'))
 
 //            ->add('coverImage', UrlType::class, $this->getConfiguration('Url','Donner l\'adresse d\'une image'))
         ;
