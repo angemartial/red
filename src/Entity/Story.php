@@ -14,7 +14,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=StoryRepository::class)
- * @UniqueEntity("title") *
+ * @UniqueEntity("title")
  *  @ORM\HasLifecycleCallbacks
  */
 class Story

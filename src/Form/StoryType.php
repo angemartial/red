@@ -39,7 +39,6 @@ class StoryType extends AbstractType
         $builder
 
             ->add('title', TextType::class, $this->getConfiguration('Titre', 'Entrez le titre'))
-            ->add('slug',  UrlType::class,$this->getConfiguration('adresse web', 'Entrez votre adresse'))
             ->add('introduction',  TextType::class, $this->getConfiguration('Introduction', 'Donnez une description globale'))
            ->add('submit', SubmitType::class, $this->getConfiguration('Enregister', '', ['attr' => ['class' => 'btn btn-primary']]))
             // ->add('content',  FroalaEditorType::class,$this->getConfiguration('Descrition', 'Zone de texte'))

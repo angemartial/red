@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Method;
 use App\Entity\Story;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -40,12 +41,35 @@ class AppFixtures extends Fixture
                   
 
         $manager->persist($image);
-       }          
-
+       }
 
         $manager->persist($stories);
     }
 
+     for($m = 1; $m<=30; $m++){
+
+         $method = new Method();
+
+         $titre           = $faker->sentence();
+         $description    = '<p>' .join('</p><p>', $faker->paragraphs(5)) .'</P>';
+
+
+         $method->setTitle($titre)
+             ->setDescription($description);
+
+         for($p = 1; $p <= mt_rand(2 , 5); $p++){
+             $image = new Image();
+
+             $image->setUrl($faker->imageUrl())
+                   ->setCaption($faker->sentence());
+             $method->addMethodCoverImage($image);
+
+
+             $manager->persist($image);
+         }
+         $manager->persist($method);
+
+     }
       $manager->flush();
      
     }

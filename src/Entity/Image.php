@@ -34,9 +34,12 @@ class Image
      */
     private $stories;
 
+
+
     public function __construct()
     {
         $this->stories = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -95,4 +98,6 @@ class Image
 
         return $this;
     }
+
+
 }
