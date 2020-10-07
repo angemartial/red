@@ -19,6 +19,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Story
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -56,11 +57,6 @@ class Story
     private $content;
 
     /**
-     * @ORM\Column(type="boolean", options={"default": false})
-     */
-    private $state;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $created_at;
@@ -91,7 +87,6 @@ class Story
     public function __construct()
     {
         $this->images = new ArrayCollection();
-        $this->state = new ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->coverImage = new ArrayCollection();
@@ -186,18 +181,6 @@ class Story
         return $this;
     }
 
-    public function getState(): ?bool
-    {
-        return $this->state;
-    }
-
-    public function setState(bool $state): self
-    {
-        $this->state = $state;
-
-        return $this;
-    }
-
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->created_at;
@@ -213,7 +196,7 @@ class Story
     /**
      * @return Collection|Image[]
      */
-    public function getCoverImage(): Collection
+    public function getCoverImage(): ?Collection
     {
         return $this->coverImage;
     }
@@ -235,6 +218,9 @@ class Story
 
         return $this;
     }
+
+
+
 
    
 }

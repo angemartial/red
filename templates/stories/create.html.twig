@@ -35,14 +35,14 @@
                     <h3 class="title">Details</h3>
                     <div class="check-out-box">
                         <div class="row">{{ form_row(form.title) }}</div>
-                        
+
                         <div class="row">{{ form_row(form.introduction) }}</div>
                         <div class="row">{{ form_row(form.content) }}</div>
                     </div>
                 </div>
                 <div class="place-order col-lg-12 col-md-12 col-sm-12">
-                    {{ form_widget(form.submit) }}
-{#                    <button type="submit" class="btn btn-primary">Sauvegarder</button>#}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
             </div>
             {{ form_end(form) }}

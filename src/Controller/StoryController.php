@@ -32,19 +32,20 @@ class StoryController extends AbstractController
      * @Route("/stories/create", name ="stories_create")
      * @return Response
      */
-    public function create(Request $request, EntityManagerInterface $entityManager)
+    public function create(Request $request, EntityManagerInterface $manager)
     {
         $story = new Story();
         $form = $this->createForm(StoryType::class, $story);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()){
-            $entityManager->persist($story);
-            $entityManager->flush();
+            $manager->persist($story);
+            $manager->flush();
 
             $this->addFlash(
                 'success',
-                'Votre article' .$story->getTitle(). 'a bien été envoyé'
+                'Votre actualité' .$story->getTitle(). 'a bien été envoyée'
             );
 
             return $this->redirectToRoute('story_show', [
@@ -54,7 +55,7 @@ class StoryController extends AbstractController
 
         }
         return $this->render('stories/create.html.twig', [
-            'form' => $form->createView()
+           'form' => $form->createView()
         ]);
 
     }

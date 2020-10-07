@@ -99,5 +99,13 @@ class Image
         return $this;
     }
 
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString(){
+        return $this->url ?? "https://picsum.photos/200";
+    }
+
 
 }
