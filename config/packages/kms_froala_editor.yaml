@@ -4,4 +4,4 @@ twig:
 
 kms_froala_editor:
     language: fr
-    saveInterval: 2500
+    saveInterval: 0

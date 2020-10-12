@@ -39,10 +39,10 @@
                 }
             });
 
-            $("form").on('submit',function(event) {
-                event.preventDefault();
-                return false;
-            });
+            // $("form").on('submit',function(event) {
+            //     event.preventDefault();
+            //     return false;
+            // });
         });
         
         /* Zoom Gallery

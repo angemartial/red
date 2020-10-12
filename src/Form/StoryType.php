@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Story;
+use KMS\FroalaEditorBundle\Form\Type\FroalaEditorType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -38,7 +39,7 @@ class StoryType extends AbstractType
             ->add('title',TextType::class, $this->getConfiguration("Titre","Entrez le titre"))
             ->add('slug',TextType::class, $this->getConfiguration("Adresse","Tapez l'url"))
             ->add('introduction',TextType::class, $this->getConfiguration("Introduction","description générale de l'annonce"))
-            ->add('content', TextareaType::class, $this->getConfiguration("Description","tapez le texte"))
+            ->add('content', FroalaEditorType::class, $this->getConfiguration("Description","tapez le texte"))
             ->add('coverImage')
         ;
     }
